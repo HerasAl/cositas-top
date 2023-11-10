@@ -1,0 +1,11 @@
+
+  /* main_style.css */
+.max-height-300 {
+    max-height: 500px; /* Ajusta la altura máxima según sea necesario */
+  }
+  /* main_style.css */
+.object-fit-cover {
+    object-fit: cover;
+  }
+  
+  
