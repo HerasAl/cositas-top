@@ -4,6 +4,14 @@ import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import animationData from "../assets/lottie/gracias.json"; // Reemplaza con la ruta correcta de tu archivo JSON
 
+var debug = true;
+var server="";
+
+if(debug){
+   server = 'http://localhost:3001';
+}else{
+    server = '/server/data'
+}
 
 const Register = () => {
 
@@ -34,7 +42,7 @@ const Register = () => {
   useEffect(() => {
     // Llamada a la API para obtener la lista de municipios
     // Reemplaza la URL con la ruta correcta de tu API
-    fetch("http://localhost:3001/api/municipios")
+    fetch(server+"/api/municipios")
       .then((response) => response.json())
       .then((data) => setMunicipios(data))
       .catch((error) => console.error("Error fetching municipios:", error));
@@ -55,7 +63,7 @@ const Register = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3001/api/registro", {
+      const response = await fetch(server+"/api/registro", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
