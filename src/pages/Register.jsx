@@ -22,7 +22,6 @@ const Register = () => {
   const [registroData, setRegistroData] = useState({
     nombre: "",
     correo: "",
-    direccion: "",
     curp: "",
     tipo_artesano: "",
     artesania: "",
@@ -34,7 +33,6 @@ const Register = () => {
     col: "",
     id_municipio: "",
     cp: "",
-    fecha_registro: "",
     telefono: "",
   });
 
@@ -79,7 +77,6 @@ const Register = () => {
         setRegistroData({
           nombre: "",
           correo: "",
-          direccion: "",
           curp: "",
           tipo_artesano: "",
           artesania: "",
@@ -91,7 +88,6 @@ const Register = () => {
           col: "",
           id_municipio: "",
           cp: "",
-          fecha_registro: "",
           telefono: "",
         });
     } else {

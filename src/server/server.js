@@ -73,7 +73,8 @@ app.post('/api/registro', (req, res) => {
     if (err) {
       res.status(500).send({
         'status': 0,
-        'message': 'Por favor revise sus campos'
+        'message': 'Por favor revise sus campos',
+        'consulta': sql
       });
     } else {
       res.status(201).send({
