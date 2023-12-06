@@ -7,6 +7,9 @@ import { addCart } from "../redux/action";
 
 import { Footer, Navbar } from "../components";
 
+const debug = true;
+const server = debug ? 'http://localhost:3001' : '/server/data';
+
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
@@ -24,12 +27,12 @@ const Product = () => {
     const getProduct = async () => {
       setLoading(true);
       setLoading2(true);
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const response = await fetch(server+`/api/productos/${id}`);
       const data = await response.json();
       setProduct(data);
       setLoading(false);
       const response2 = await fetch(
-        `https://fakestoreapi.com/products/category/${data.category}`
+        `https://fakestoreapi.com/products/category/jewelery`
       );
       const data2 = await response2.json();
       setSimilarProducts(data2);

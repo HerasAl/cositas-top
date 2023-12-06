@@ -4,13 +4,7 @@ import { useSelector } from 'react-redux'
 
 const Navbar = () => {
     const state = useSelector(state => state.handleCart)
-
-    const estiloAmarillo = {
-        backgroundColor: '#FFD700',
-        color: '#000', // Cambia el color del texto según sea necesario
-        
-    };
-
+    
     const estiloRosa = {
         backgroundColor: '#8C60AB',
         color: '#000', // Cambia el color del texto según sea necesario
@@ -20,7 +14,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg navbar-dark py-1 sticky-top" style={estiloRosa}>
             <div className="container">
             <NavLink to="/" className="navbar-brand fw-bold fs-3 px-1">
-                    <img src="./assets/coco-logo2.png" alt="Logo" className="logo-img" style={{ width: '80px', marginRight: '1px' }}/> COSITAS
+                    <img src="../assets/coco-logo2.png" alt="Logo" className="logo-img" style={{ width: '80px', marginRight: '1px' }}/> COSITAS
                 </NavLink>                <button className="navbar-toggler mx-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

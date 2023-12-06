@@ -24,6 +24,65 @@ app.get('/api/municipios', (req, res) => {
   });
 });
 
+app.get('/api/productos/:id?', (req, res) => {
+  const productId = req.params.id;
+
+  // Utiliza LEFT JOIN para obtener productos incluso si no tienen un registro en la tabla rates
+  let query = 'SELECT productos.id, productos.title, productos.price, productos.description, productos.category, productos.image, ' +
+              'rates.rate, rates.comment ' +
+              'FROM productos ' +
+              'LEFT JOIN rates ON productos.id = rates.id_producto';
+
+  const queryParams = [];
+
+  if (productId) {
+    query += ' WHERE productos.id = ?';
+    queryParams.push(productId);
+  }
+
+  query += ' LIMIT 9';
+
+  db.query(query, queryParams, (err, results) => {
+    if (err) {
+      console.error('Error executing query:', err);
+      res.status(500).send('Error retrieving data from database');
+    } else {
+      // Organiza los resultados en el formato esperado
+      const formattedResults = [];
+
+      results.forEach(row => {
+        const existingProduct = formattedResults.find(product => product.id === row.id);
+
+        if (!existingProduct) {
+          formattedResults.push({
+            id: row.id,
+            title: row.title,
+            price: row.price,
+            description: row.description,
+            category: row.category,
+            image: row.image,
+            rating: {
+              rate: row.rate || 0,
+              comments: row.comment ? [row.comment] : []  // Inicializa un array de comentarios si hay un comentario disponible
+            }
+          });
+        } else {
+          existingProduct.rating.comments.push(row.comment);
+        }
+      });
+
+      if (formattedResults.length === 1 && productId) {
+        res.status(200).json(formattedResults[0]); // Retorna el único producto encontrado sin un array
+      } else {
+        res.status(200).json(formattedResults); // Retorna todos los productos en un array
+      }
+    }
+  });
+});
+
+
+
+
 
 // Nueva ruta para manejar el registro de usuarios
 app.post('/api/registro', (req, res) => {

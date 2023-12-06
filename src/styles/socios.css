@@ -1,7 +1,7 @@
 /* Socios.css */
 .slick-slider {
   margin: 0 auto;
-  width: 80%; /* Ajusta el ancho según tus necesidades */
+  width: 100%; /* Ajusta el ancho según tus necesidades */
 }
 
 .slick-prev,
@@ -32,16 +32,6 @@
 .card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Cambiamos la sombra al pasar el mouse */
 }
-
-.card-img-top {
-    width: 70%;
-    height: 220px; /* Ajusta la altura según tus necesidades */
-    object-fit: cover;
-    object-position: center; /* Centramos la imagen */
-    border-top-left-radius: 12px; /* Añadimos bordes redondeados a las esquinas de la imagen */
-    border-top-right-radius: 12px;
-  }
-
 .card-body {
   padding: 15px;
 }
