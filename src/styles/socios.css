@@ -1,0 +1,47 @@
+/* Socios.css */
+.slick-slider {
+  margin: 0 auto;
+  width: 80%; /* Ajusta el ancho según tus necesidades */
+}
+
+.slick-prev,
+.slick-next {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: #555;
+}
+
+.card {
+  width: 100%;
+  border: none; /* Eliminamos el borde existente */
+  border-radius: 12px; /* Añadimos bordes redondeados */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregamos elevación (sombra) */
+  transition: box-shadow 0.3s ease; /* Efecto de transición para la sombra */
+  margin-right: 80px; /* Añadimos margen derecho entre las tarjetas */
+}
+
+.card:last-child {
+  margin-right: 0; /* Eliminamos el margen derecho en la última tarjeta */
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Cambiamos la sombra al pasar el mouse */
+}
+
+.card-img-top {
+    width: 70%;
+    height: 220px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover;
+    object-position: center; /* Centramos la imagen */
+    border-top-left-radius: 12px; /* Añadimos bordes redondeados a las esquinas de la imagen */
+    border-top-right-radius: 12px;
+  }
+
+.card-body {
+  padding: 15px;
+}

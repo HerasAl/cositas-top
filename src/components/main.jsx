@@ -13,7 +13,7 @@ const Home = () => {
         />
         <div className="card-img-overlay d-flex align-items-center">
           <div className="container text-center text-white">
-            <h1 className="card-text fs-3">
+            <h1 className="card-text fs-5">
               El proyecto no solo ha sido una oportunidad para impulsar la
               economía de los artesanos, sino también un recordatorio constante
               de la importancia de preservar las tradiciones culturales y
